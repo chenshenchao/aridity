@@ -3,16 +3,18 @@ from pyglet import image
 from pyglet import sprite
 from glooey import Gui
 
+
 class MainWindow(Window):
     '''
     游戏主窗口。
     '''
 
     def __init__(self):
-        super().__init__()
+        super().__init__(visible=False)
         self.set_caption('索然')
         self.gui = Gui(self)
         self.fps = FPSDisplay(window=self)
+
         self.a = image.load('asset/characters.png')
         self.grid = image.ImageGrid(self.a, 8, 12)
         icon = image.load('aridity.ico')

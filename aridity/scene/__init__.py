@@ -1,5 +1,5 @@
 from ..event import Event
-from .view import MainWindow
+from ..frame import MainWindow
 from .born import BornScene
 from .entry import EntryScene
 from .world import WorldScene
@@ -10,7 +10,7 @@ class Scene:
     场景调度器。
     '''
 
-    window = None
+    window = MainWindow()
     scenes = {
         'born': BornScene,
         'entry': EntryScene,
@@ -22,7 +22,7 @@ class Scene:
         '''
         初始化。
         '''
-        cls.window = MainWindow()
+        cls.window.set_visible(True)
         cls.swap(scene)
         Event.attach('swap-scene', cls.swap)
         Event.attach('close-window', lambda d: cls.window.close())

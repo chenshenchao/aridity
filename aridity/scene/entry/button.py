@@ -3,6 +3,10 @@ from .label import MyLabel
 
 
 class MyButton(glooey.Button):
+    '''
+    开始面板上的按钮。
+    '''
+
     Foreground = MyLabel
     custom_alignment = 'fill'
 

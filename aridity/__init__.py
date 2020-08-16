@@ -4,6 +4,11 @@ from pyglet import clock
 from .event import Event
 
 
+class Application:
+    '''
+    '''
+
+    
 
 
 def get_here():
