@@ -1,45 +1,39 @@
-import pyglet
-
 class EventDispatcher:
     '''
     事件管理器。
     '''
+    queue = []
+    handles = {}
 
-    def __init__(self):
-        '''
-        '''
-
-        self.queue = []
-        self.handles = {}
-
-    def attach(self, name, handle):
+    @classmethod
+    def attach(cls, name, handle):
         '''
         注册事件。
         '''
-        self.handles[name] = handle
+        cls.handles[name] = handle
 
-    def detach(self, name):
+    @classmethod
+    def detach(cls, name):
         '''
         取消事件。
         '''
-        if name in self.handles:
-            del self.handles[name]
+        if name in cls.handles:
+            del cls.handles[name]
 
-    def emit(self, name, data=None):
+    @classmethod
+    def emit(cls, name, data=None):
         '''
         发出事件。
         '''
-        self.queue.append((name, data))
+        cls.queue.append((name, data))
 
-    def dispatch(self, dt):
+    @classmethod
+    def dispatch(cls, dt):
         '''
         调度事件。
         '''
-        for (name, data) in self.queue:
-            if name in self.handles:
-                handler = self.handles[name]
+        for (name, data) in cls.queue:
+            if name in cls.handles:
+                handler = cls.handles[name]
                 handler(data)
-        self.queue.clear()
-
-dispatcher = EventDispatcher()
-pyglet.clock.schedule_interval(dispatcher.dispatch, 1 / 120.0)
+        cls.queue.clear()
