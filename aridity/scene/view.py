@@ -15,6 +15,8 @@ class MainWindow(Window):
         self.fps = FPSDisplay(window=self)
         self.a = image.load('asset/characters.png')
         self.grid = image.ImageGrid(self.a, 8, 12)
+        icon = image.load('aridity.ico')
+        self.set_icon(icon)
         self.s = sprite.Sprite(self.grid[0])
         
         self.s.x = 100

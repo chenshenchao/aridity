@@ -1,7 +1,7 @@
 from glooey import VBox
 from .label import *
 from .button import *
-from ...event import EventDispatcher
+from ...event import Event
 
 class EntryScene(VBox):
     '''
@@ -25,16 +25,16 @@ class EntryScene(VBox):
         '''
         创建角色。
         '''
-        EventDispatcher.emit('swap-scene', 'born')
+        Event.emit('swap-scene', 'born')
 
     def on_click_load(self):
         '''
         读取存档。
         '''
-        EventDispatcher.emit('swap-scene', 'world')
+        Event.emit('swap-scene', 'world')
 
     def on_click_quit(self):
         '''
         推出游戏。
         '''
-        EventDispatcher.emit('close-window')
+        Event.emit('close-window')

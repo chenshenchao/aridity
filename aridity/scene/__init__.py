@@ -1,22 +1,37 @@
-from .. import window
-from ..event import EventDispatcher
+from ..event import Event
+from .view import MainWindow
 from .born import BornScene
 from .entry import EntryScene
 from .world import WorldScene
 
-scenes = {
-    'born': BornScene,
-    'entry': EntryScene,
-    'world': WorldScene,
-}
 
-def get_scene(name):
-    return scenes[name]
+class Scene:
+    '''
+    场景调度器。
+    '''
 
-def swap_scene(name):
-    window.gui.clear()
-    cls = scenes[name]
-    window.gui.add(cls())
+    window = None
+    scenes = {
+        'born': BornScene,
+        'entry': EntryScene,
+        'world': WorldScene,
+    }
 
+    @classmethod
+    def init(cls, scene):
+        '''
+        初始化。
+        '''
+        cls.window = MainWindow()
+        cls.swap(scene)
+        Event.attach('swap-scene', cls.swap)
+        Event.attach('close-window', lambda d: cls.window.close())
 
-EventDispatcher.attach('swap-scene', swap_scene)
+    @classmethod
+    def swap(cls, name):
+        '''
+        切换场景。
+        '''
+        cls.window.gui.clear()
+        action = cls.scenes[name]
+        cls.window.gui.add(action())

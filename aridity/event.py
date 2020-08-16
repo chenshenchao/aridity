@@ -1,4 +1,4 @@
-class EventDispatcher:
+class Event:
     '''
     事件管理器。
     '''

@@ -1,8 +1,7 @@
 import os
 import sys
 from pyglet import clock
-from .event import EventDispatcher
-from .view import MainWindow
+from .event import Event
 
 
 
@@ -14,6 +13,4 @@ def get_here():
     path = os.path.realpath(sys.argv[0])
     return os.path.dirname(path)
 
-window = MainWindow()
-EventDispatcher.attach('close-window', lambda d: window.close())
-clock.schedule_interval(EventDispatcher.dispatch, 1 / 120.0)
+clock.schedule_interval(Event.dispatch, 1 / 120.0)

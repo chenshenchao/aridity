@@ -1,7 +1,7 @@
 from pyglet import app
-from aridity.scene import swap_scene
+from aridity.scene import Scene
 
 
-swap_scene('entry')
+Scene.init('entry')
 
 app.run()
