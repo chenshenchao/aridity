@@ -20,14 +20,38 @@ class MainWindow(Window):
         self.gui = Gui(self)
         self.fps = FPSDisplay(window=self)
 
-        self.a = Actor()
+        self.actors = set()
+
+    def add_actor(self, one):
+        '''
+        添加角色
+        '''
+        
+        self.actors.add(one)
+
+    def drop_actor(self, one):
+        '''
+        删除角色
+        '''
+
+        self.actors.remove(one)
+
+    def clear_action(self):
+        '''
+        清空。
+        '''
+
+        self.actors.clear()
 
     def on_draw(self):
         '''
         绘制事件
         '''
         self.fps.draw()
-        self.a.on_draw()
+        
+        # 角色绘制
+        for a in self.actors:
+            a.on_draw()
 
     def on_key_press(self, code, modifiers):
         '''

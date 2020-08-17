@@ -25,7 +25,12 @@ class Scene:
         cls.window.set_visible(True)
         cls.swap(scene)
         Event.attach('swap-scene', cls.swap)
+        Event.attach('add-actor', cls.add_actor)
         Event.attach('close-window', lambda d: cls.window.close())
+
+    @classmethod
+    def add_actor(cls, one):
+        cls.window.add_actor(one)
 
     @classmethod
     def swap(cls, name):

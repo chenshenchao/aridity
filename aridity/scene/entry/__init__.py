@@ -2,6 +2,8 @@ from glooey import VBox
 from .label import *
 from .button import *
 from ...event import Event
+from ...frame import Actor
+
 
 class EntryScene(VBox):
     '''
@@ -20,6 +22,9 @@ class EntryScene(VBox):
         ]
         for button in buttons:
             self.add(button)
+
+        self.mon = Actor()
+        Event.emit('add-actor', self.mon)
 
     def on_click_born(self):
         '''

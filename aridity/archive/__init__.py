@@ -1,5 +1,5 @@
 import os
-from . import get_here
+from ..system import get_here
 
 def get_save_path():
     '''
