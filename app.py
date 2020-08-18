@@ -8,7 +8,8 @@ def on_update(dt):
     游戏循环的主体。
     '''
     Event.dispatch(dt)
+    Scene.on_update(dt)
 
-schedule_interval(on_update, 1 / 120.0)
+schedule_interval(on_update, 0.01)
 Scene.init('entry')
 app.run()

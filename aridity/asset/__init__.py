@@ -14,7 +14,7 @@ class Image:
     grids = {}
 
     @classmethod
-    def get(cls, name, n = None):
+    def get(cls, name, n=None):
         '''
         获取图片资源
         '''
@@ -33,7 +33,7 @@ class Image:
                 raise Exception()
             with open(p, 'r', encoding='utf-8') as r:
                 cls.meta[name] = json.load(r)
-        
+
         # 加载切格图片。
         if name not in cls.grids:
             info = cls.meta[name]
@@ -44,4 +44,13 @@ class Image:
                 rows=rows,
                 columns=columns
             )
-        return cls.grids[name][n]
+        if isinstance(n, int):
+            return cls.grids[name][n]
+        return [cls.grids[name][i] for i in n]
+
+
+class Model:
+    '''
+    '''
+
+    

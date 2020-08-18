@@ -33,6 +33,21 @@ class Scene:
         cls.window.add_actor(one)
 
     @classmethod
+    def on_update(cls, dt):
+        '''
+        刷新。
+        '''
+        cls.window.on_update(dt)
+
+    @classmethod
+    def clear(cls):
+        '''
+        清空场景。
+        '''
+        cls.window.gui.clear()
+        
+
+    @classmethod
     def swap(cls, name):
         '''
         切换场景。

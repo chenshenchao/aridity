@@ -19,6 +19,7 @@ class MainWindow(Window):
         self.set_caption('索然')
         self.gui = Gui(self)
         self.fps = FPSDisplay(window=self)
+        
 
         self.actors = set()
 
@@ -42,6 +43,14 @@ class MainWindow(Window):
         '''
 
         self.actors.clear()
+
+    def on_update(self, dt):
+        '''
+        更新
+        '''
+        for a in self.actors:
+            a.on_update(dt)
+
 
     def on_draw(self):
         '''
