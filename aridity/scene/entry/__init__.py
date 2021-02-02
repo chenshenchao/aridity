@@ -40,6 +40,6 @@ class EntryScene(VBox):
 
     def on_click_quit(self):
         '''
-        推出游戏。
+        退出游戏。
         '''
         Event.emit('close-window')

@@ -1,12 +1,18 @@
+from dataclasses import dataclass
+from .meta import XYZ, JMSHT
+
+@dataclass
 class Role:
     '''
-    角色类。
+    角色类
     '''
-    
-    def __init__(self):
-        '''
-        初始化。
-        '''
 
-        self.x = 0.0
-        self.y = 0.0
+    position: XYZ = XYZ()
+
+    hp: float = 100.0
+    hp_max: float = 100.0
+    mp: float = 100.0
+    mp_max: float = 100.0
+
+    
+

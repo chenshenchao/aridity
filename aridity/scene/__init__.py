@@ -22,6 +22,7 @@ class Scene:
         '''
         初始化。
         '''
+        
         cls.window.set_visible(True)
         cls.swap(scene)
         Event.attach('swap-scene', cls.swap)
@@ -30,6 +31,10 @@ class Scene:
 
     @classmethod
     def add_actor(cls, one):
+        '''
+        添加角色。
+        '''
+
         cls.window.add_actor(one)
 
     @classmethod
@@ -37,6 +42,7 @@ class Scene:
         '''
         刷新。
         '''
+
         cls.window.on_update(dt)
 
     @classmethod
@@ -44,14 +50,15 @@ class Scene:
         '''
         清空场景。
         '''
+
         cls.window.gui.clear()
-        
 
     @classmethod
     def swap(cls, name):
         '''
         切换场景。
         '''
+        
         cls.window.gui.clear()
         action = cls.scenes[name]
         cls.window.gui.add(action())

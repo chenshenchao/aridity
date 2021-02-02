@@ -47,10 +47,4 @@ class Image:
         if isinstance(n, int):
             return cls.grids[name][n]
         return [cls.grids[name][i] for i in n]
-
-
-class Model:
-    '''
-    '''
-
     

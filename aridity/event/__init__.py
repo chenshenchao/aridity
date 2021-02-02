@@ -10,6 +10,7 @@ class Event:
         '''
         注册事件。
         '''
+
         cls.handles[name] = handle
 
     @classmethod
@@ -17,6 +18,7 @@ class Event:
         '''
         取消事件。
         '''
+
         if name in cls.handles:
             del cls.handles[name]
 
@@ -25,6 +27,7 @@ class Event:
         '''
         发出事件。
         '''
+
         cls.queue.append((name, data))
 
     @classmethod
@@ -32,6 +35,7 @@ class Event:
         '''
         调度事件。
         '''
+
         for (name, data) in cls.queue:
             if name in cls.handles:
                 handler = cls.handles[name]

@@ -80,3 +80,12 @@ class Model2D:
         '''
         更新动画。
         '''
+
+    @classmethod
+    def from_meta(cls, meta):
+        '''
+        '''
+
+        r = cls()
+        
+        return r

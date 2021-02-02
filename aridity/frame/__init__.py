@@ -16,7 +16,7 @@ class MainWindow(Window):
         super().__init__(visible=False)
         icon = image.load('aridity.ico')
         self.set_icon(icon)
-        self.set_caption('索然')
+        self.set_caption('蛮荒')
         self.gui = Gui(self)
         self.fps = FPSDisplay(window=self)
         

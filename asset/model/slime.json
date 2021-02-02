@@ -17,5 +17,24 @@
             "name": "characters",
             "n": 2
         }]
+    },
+    "walk-n": {
+        "time": 1.2,
+        "frames": [{
+            "time": 0,
+            "type": "image-grid",
+            "name": "characters",
+            "n": 0
+        }, {
+            "time": 0.5,
+            "type": "image-grid",
+            "name": "characters",
+            "n": 1
+        }, {
+            "time": 0.9,
+            "type": "image-grid",
+            "name": "characters",
+            "n": 2
+        }]
     }
 }

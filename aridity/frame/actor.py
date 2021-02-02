@@ -25,6 +25,7 @@ class Actor:
         '''
         更新事件。
         '''
+        
         self.timeline = (self.timeline + dt) % 1
         i = int((self.timeline * 3) % 3)
         self.sprite.image = self.imgs[i]
