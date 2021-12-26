@@ -4,7 +4,7 @@
 
 import sys
 from PySide6.QtWidgets import QApplication
-from aridity.disign.view.mainwindow import MainWindow
+from aridity.design.view.mainwindow import MainWindow
 
 def main():
     '''

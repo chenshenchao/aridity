@@ -12,18 +12,20 @@ if sys.platform == "win32":
 
 setup(
     name="aridity",
-    version="0.3",
+    version="0.4",
     description="yet a roguelike game.",
     options={"build_exe": build_exe_options},
     executables=[
         Executable(
             "app.py",
             base=base,
-            target_name='aridity'
+            icon='aridity.ico',
+            target_name='aridity',
         ),
         Executable(
             "edit.py",
-            base=base
+            base=base,
+            icon='aridity/design/edit.ico',
         ),
     ]
 )
