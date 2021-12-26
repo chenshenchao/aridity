@@ -8,6 +8,7 @@ class Role:
     '''
 
     position: XYZ = XYZ()
+    meta: JMSHT = JMSHT()
 
     hp: float = 100.0
     hp_max: float = 100.0

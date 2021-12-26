@@ -11,6 +11,10 @@ class EntryScene(VBox):
     '''
 
     def __init__(self):
+        '''
+        初始化。
+        '''
+
         super().__init__()
         self.alignment = 'center'
         title = MyTitle("蛮荒")
